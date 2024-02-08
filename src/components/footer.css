@@ -15,13 +15,4 @@
     cursor: pointer;
 }
 
-.whole-div{
-    display: flex;
-    flex-direction: column;
-    margin-top: auto;
-}
-
-.foot{
-    margin-top: auto;
-}
 

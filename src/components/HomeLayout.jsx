@@ -9,7 +9,7 @@ function HomeLayout() {
         <div>
           <NavBar />
         </div>
-        <div>
+        <div className="mid">
           <Outlet />
         </div>
 
