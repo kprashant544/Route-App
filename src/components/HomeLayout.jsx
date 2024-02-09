@@ -5,10 +5,9 @@ import NavBar from "./NavBar";
 function HomeLayout() {
   return (
     <>
-      <div className="whole-div">
-        <div>
-          <NavBar />
-        </div>
+      <div className="top">
+        <NavBar />
+
         <div className="mid">
           <Outlet />
         </div>

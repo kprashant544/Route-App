@@ -1,0 +1,26 @@
+
+.image-section{
+    background-image: url('image.jpg');
+    height: 400px;
+    background-size:cover;
+    background-position: center;
+    
+    
+}
+
+.image-section > p{
+
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 3rem;
+    padding: 75px 115px;
+}
+
+.mid-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 81, 37);
+    
+}
+

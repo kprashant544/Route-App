@@ -4,18 +4,38 @@ function NavBar() {
   return (
     <>
       <div className="navbar">
-        <ul>
+        <ul className="nav-items">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active-side" : "")}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "active-side" : "")}
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/blog">Blog</NavLink>
+            <NavLink
+              to="/blog"
+              className={({ isActive }) => (isActive ? "active-side" : "")}
+            >
+              Blog
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? "active-side" : "")}
+            >
+              Contact
+            </NavLink>
           </li>
         </ul>
       </div>

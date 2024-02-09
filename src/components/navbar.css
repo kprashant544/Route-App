@@ -3,13 +3,12 @@
     padding: 15px; 
     background-color: black;
     justify-content: flex-end;
-    top: 0;
+   
 }
 
 .navbar ul { 
-    font-family: sans-serif Arial;
 	list-style-type: none; 
-    font-size: 20px;
+    font-size: 28px;
     margin-right: 5rem;
 	} 
  
@@ -18,8 +17,10 @@
 } 
 
 .navbar ul li :hover{
-    color: white;
-    background-color: rgb(0, 8, 255);
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    transition-delay: 0.9ms;
+    border-radius: 50px;
 }
  
 .navbar ul li a { 
@@ -29,4 +30,11 @@
 	} 
  
 
-   
+.active-side{
+    background-color: blueviolet;
+    border-radius: 50px;
+}
+
+.nav-items{
+    height: 100%;
+}

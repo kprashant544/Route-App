@@ -5,10 +5,11 @@ import SideNav from "./components/SideNav";
 function About() {
   return (
     <>
-      About
-      <SideNav />
-      <div className="outlet">
-        <Outlet />
+      <div className="parent">
+        <SideNav />
+        <div className="outlet">
+          <Outlet />
+        </div>
       </div>
     </>
   );

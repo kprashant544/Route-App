@@ -12,16 +12,11 @@ body{
 }
 
 
-.whole-div{
+.top{
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-.mid{
 
-}
 
-.foot{
-  margin-top: auto;
-}
