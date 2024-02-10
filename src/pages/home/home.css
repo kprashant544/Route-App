@@ -1,7 +1,7 @@
 
 .image-section{
     background-image: url('image.jpg');
-    height: 400px;
+    height: 300px;
     background-size:cover;
     background-position: center;
     
@@ -20,7 +20,77 @@
 .mid-container{
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 81, 37);
+    background-color: #F57D1F;
+    align-items: center;
+    height: 200px;
+    color: white;
+    font-size: 1.5rem;
+
+}
+
+.mid-container > .description{
+    display: flex;
+    padding-left: 50vh;
+    padding-right: 50vh;
     
 }
 
+
+/* .btn{
+  
+    margin-top: 5px;
+    border:none;
+    border-radius:10px;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+    
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: aquamarine;
+} */
+
+
+
+/* Button CSS */
+.btn {
+  background: #FF4742;
+  border: 1px solid black;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 16px;
+  outline: 0;
+  padding: 7px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.btn:hover,
+.btn-24:active {
+  background-color: initial;
+  color: aqua;
+}
+
+.btn:active {
+  opacity: .5;
+}
+
+
+ .sections{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    background-color: aqua;
+}
