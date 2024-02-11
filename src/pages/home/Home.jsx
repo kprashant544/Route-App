@@ -12,9 +12,9 @@ function Home() {
           <div className="description">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Praesentium exercitationem cumque odio, dolorem libero non
+              Praesentium exercitationem camque odio, dolorem libero non
               eligendi, amet laborum dolore, optio suscipit itaque! Molestias
-              ipsam cum dicta ut? Nesciunt, perspiciatis ullam? Lorem ipsum
+              ipsam cam dicta ut? Nesciunt, perspiciatis ullam? Lorem ipsum
               dolor sit amet consectetur adipisicing elit. Vero sunt nobis
               suscipit? Quasi minus quisquam incidunt? Nihil voluptatum quasi
               voluptas minus

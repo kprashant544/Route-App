@@ -13,7 +13,7 @@
     color: white;
     display: flex;
     justify-content: flex-end;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 75px 115px;
 }
 
@@ -22,13 +22,14 @@
     flex-direction: column;
     background-color: #F57D1F;
     align-items: center;
-    height: 200px;
+    height: 150px;
     color: white;
     font-size: 1.5rem;
 
 }
 
 .mid-container > .description{
+    font-size: large;
     display: flex;
     padding-left: 50vh;
     padding-right: 50vh;
@@ -89,8 +90,8 @@
 
 
  .sections{
+     margin-top: 50px;
     display: flex;
-    margin-top: 20px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: aqua;
 }
