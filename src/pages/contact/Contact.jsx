@@ -1,83 +1,188 @@
 import { useState } from "react";
 import "../contact/contact.css";
 
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
+import Select from "@mui/material/Select";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+
 function Contact() {
-  const [name, setName] = useState("");
-  const [mail, setMail] = useState("");
-  const [pass, setPass] = useState("");
-  const [gender, setGender] = useState("");
-  const [country, setCountry] = useState("");
-  const [check, setCheck] = useState(false);
-  const [nameError, setNameError] = useState("");
-  const [mailError, setMailError] = useState("");
-  const [passError, setPassError] = useState("");
-  const [genderError, setGenderError] = useState("");
-  const [countryError, setCountryError] = useState("");
-  const [checkError, setCheckError] = useState("");
+  const [country1, setCountry1] = useState("");
+
+  const handleChange = (event) => {
+    setCountry1(event.target.value);
+  };
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    gender: "",
+    country: "",
+    check: false,
+  });
+
+  const [formError, setFormError] = useState({
+    nameError: "",
+    emailError: "",
+    passwordError: "",
+    genderError: "",
+    countryError: "",
+    checkError: false,
+  });
+
+  // const [name, setName] = useState("");
+  // const [mail, setMail] = useState("");
+  // const [pass, setPass] = useState("");
+  // const [gender, setGender] = useState("");
+  // const [country, setCountry] = useState("");
+  // const [check, setCheck] = useState(false);
+  // const [nameError, setNameError] = useState("");
+  // const [mailError, setMailError] = useState("");
+  // const [passError, setPassError] = useState("");
+  // const [genderError, setGenderError] = useState("");
+  // const [countryError, setCountryError] = useState("");
+  // const [checkError, setCheckError] = useState("");
 
   function onSubmit() {
-    console.log(name);
-    console.log(mail);
-    console.log(pass);
-    console.log(gender);
-    console.log(check);
-    console.log(country);
+    // console.log(name);
+    // console.log(mail);
+    // console.log(pass);
+    // console.log(gender);
+    // console.log(check);
+    // console.log(country);
 
-    if (!name) {
-      setNameError("Please enter your name");
-    } else {
-      setNameError("");
+    setFormError({
+      nameError: "",
+      emailError: "",
+      passwordError: "",
+      genderError: "",
+      countryError: "",
+      checkError: "",
+    });
+    if (!formData.name) {
+      setFormError((state) => {
+        return { ...state, nameError: "Please enter your name" };
+      });
     }
 
-    if (!mail) {
-      setMailError("Please enter your e-mail");
-    } else {
-      setMailError("");
+    if (!formData.email) {
+      setFormError((state) => {
+        return { ...state, emailError: "Please enter your e-mail" };
+      });
     }
 
-    if (!pass) {
-      setPassError("Please enter your password");
-    } else {
-      setPassError("");
+    if (!formData.password) {
+      setFormError((state) => {
+        return { ...state, passwordError: "Please enter your password" };
+      });
     }
 
-    if (!gender) {
-      setGenderError("Please tick your gender");
-    } else {
-      setGenderError("");
+    if (!formData.gender) {
+      setFormError((state) => {
+        return { ...state, genderError: "Please enter your gender" };
+      });
     }
 
-    if (!country) {
-      setCountryError("Please select your country");
-    } else {
-      setCountryError("");
+    if (!formData.country) {
+      setFormError((state) => {
+        return { ...state, countryError: "Please select your country" };
+      });
     }
-    if (!check) {
-      setCheckError("Please check to agree");
-    } else {
-      setCheckError("");
+    if (!formData.check) {
+      setFormError((state) => {
+        return { ...state, checkError: "Please check to agree" };
+      });
     }
   }
-
+  console.log(formData);
   return (
     <>
       <div className="main">
-        <div className="head">
-          <h1>Please fill up the form</h1>
-        </div>
+        <div className="head"></div>
         <div className="form-div">
+          <h1>Reach Us</h1>
           <form>
             <div>
+              <Box>
+                <TextField
+                  helperText="Please enter your name"
+                  required
+                  id="demo-helper-text-aligned"
+                  label="Name"
+                />
+                <TextField
+                  helperText="Enter your e-mail"
+                  required
+                  id="demo-helper-text-aligned-no-helper"
+                  label="Email"
+                />
+              </Box>
+              <FormControl>
+                <FormLabel id="demo-row-radio-buttons-group-label">
+                  Gender
+                </FormLabel>
+                <RadioGroup
+                  row
+                  aria-labelledby="demo-row-radio-buttons-group-label"
+                  name="row-radio-buttons-group"
+                >
+                  <FormControlLabel
+                    value="male"
+                    control={<Radio />}
+                    label="Male"
+                  />
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                  />
+                  <FormControlLabel
+                    value="other"
+                    control={<Radio />}
+                    label="Other"
+                  />
+                </RadioGroup>
+
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={country1}
+                  label="Country"
+                  onChange={handleChange}
+                >
+                  <MenuItem value={10}>Nepal</MenuItem>
+                  <MenuItem value={20}>USA</MenuItem>
+                  <MenuItem value={30}>Australia</MenuItem>
+                  <MenuItem value={40}>Canada</MenuItem>
+                </Select>
+              </FormControl>
+              <Stack sx={{ marginTop: "9px" }} spacing={1} direction="column">
+                <Button variant="contained">Submit</Button>
+              </Stack>
+              <TextField
+                required
+                id="demo-helper-text-aligned-no-helper"
+                label="Enter your message"
+              />
               <label>
                 Name:
                 <input
                   onChange={(e) => {
-                    setName(e.target.value);
+                    setFormData({ ...formData, name: e.target.value });
                   }}
                   type="text"
                   placeholder="Enter your name"
                 />{" "}
-                <span className="error">{nameError}</span>
+                <span className="error">{formError.nameError}</span>
               </label>
             </div>
             <div>
@@ -85,12 +190,12 @@ function Contact() {
                 Email:
                 <input
                   onChange={(e) => {
-                    setMail(e.target.value);
+                    setFormData({ ...formData, email: e.target.value });
                   }}
                   type="email"
                   placeholder="Enter your e-mail"
                 />{" "}
-                <span className="error">{mailError}</span>
+                <span className="error">{formError.emailError}</span>
               </label>
             </div>
             <div>
@@ -98,12 +203,12 @@ function Contact() {
                 Password:
                 <input
                   onChange={(e) => {
-                    setPass(e.target.value);
+                    setFormData({ ...formData, password: e.target.value });
                   }}
                   type="text"
                   placeholder="Enter your password"
                 />{" "}
-                <span className="error">{passError}</span>
+                <span className="error">{formError.passwordError}</span>
               </label>
             </div>
             <div className="last">
@@ -113,7 +218,7 @@ function Contact() {
                   Male
                   <input
                     onChange={(e) => {
-                      setGender(e.target.value);
+                      setFormData({ ...formData, gender: e.target.value });
                     }}
                     type="radio"
                     name="gender"
@@ -124,20 +229,20 @@ function Contact() {
                   Female
                   <input
                     onChange={(e) => {
-                      setGender(e.target.value);
+                      setFormData({ ...formData, gender: e.target.value });
                     }}
                     type="radio"
                     name="gender"
                     value={"female"}
                   />
                 </label>
-                <span className="error">{genderError}</span>
+                <span className="error">{formError.genderError}</span>
               </div>
               <div>
                 <label>Country: </label>
                 <select
                   onChange={(e) => {
-                    setCountry(e.target.value);
+                    setFormData({ ...formData, country: e.target.value });
                   }}
                   name="country"
                 >
@@ -147,21 +252,21 @@ function Contact() {
                   <option value="aus">Australia</option>
                 </select>
               </div>
-              <span className="error">{countryError}</span>
+              <span className="error">{formError.countryError}</span>
               <div>
                 <input
                   onChange={(e) => {
-                    setCheck(e.target.checked);
+                    setFormData({ ...formData, check: e.target.checked });
                   }}
                   type="checkbox"
                 />{" "}
               </div>
-              <span className="error">{checkError}</span>
+              <span className="error">{formError.checkError}</span>
               <div>
                 <button
                   className="btn-1"
                   onClick={(e) => {
-                    console.log(e.preventDefault());
+                    e.preventDefault();
                     onSubmit();
                   }}
                 >
@@ -171,6 +276,7 @@ function Contact() {
             </div>
           </form>
         </div>
+        <div className="image1"></div>
       </div>
     </>
   );

@@ -1,8 +1,11 @@
 
 .main{
+    
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+   
     align-items: center;
+    margin-top: 50px;
 }
 form{
     
@@ -37,4 +40,15 @@ input {
 
 .last{
     padding-top: 10px;
+}
+
+.image1{
+    display: flex;
+    
+    background-image: url('contactus.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 30%;
+ 
 }
