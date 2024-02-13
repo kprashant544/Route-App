@@ -1,8 +1,5 @@
 import { useState } from "react";
 import "../contact/contact.css";
-
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
@@ -52,13 +49,9 @@ function Contact() {
   // const [countryError, setCountryError] = useState("");
   // const [checkError, setCheckError] = useState("");
 
-  function onSubmit() {
-    // console.log(name);
-    // console.log(mail);
-    // console.log(pass);
-    // console.log(gender);
-    // console.log(check);
-    // console.log(country);
+  function onSubmit(e) {
+    e.preventDefault();
+    onSubmit();
 
     setFormError({
       nameError: "",
@@ -107,26 +100,23 @@ function Contact() {
   return (
     <>
       <div className="main">
-        <div className="head"></div>
         <div className="form-div">
           <h1>Reach Us</h1>
           <form>
             <div>
-              <Box>
-                <TextField
-                  helperText="Please enter your name"
-                  required
-                  id="demo-helper-text-aligned"
-                  label="Name"
-                />
-                <TextField
-                  helperText="Enter your e-mail"
-                  required
-                  id="demo-helper-text-aligned-no-helper"
-                  label="Email"
-                />
-              </Box>
-              <FormControl>
+              <TextField
+                helperText="Please enter your name"
+                required
+                id="demo-helper-text-aligned"
+                label="Name"
+              />
+              <TextField
+                helperText="Enter your e-mail"
+                required
+                id="demo-helper-text-aligned-no-helper"
+                label="Email"
+              />
+              <FormControl required>
                 <FormLabel id="demo-row-radio-buttons-group-label">
                   Gender
                 </FormLabel>
@@ -153,6 +143,7 @@ function Contact() {
                 </RadioGroup>
 
                 <Select
+                  sx={{ marginTop: "10px" }}
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={country1}
@@ -165,14 +156,20 @@ function Contact() {
                   <MenuItem value={40}>Canada</MenuItem>
                 </Select>
               </FormControl>
-              <Stack sx={{ marginTop: "9px" }} spacing={1} direction="column">
-                <Button variant="contained">Submit</Button>
-              </Stack>
               <TextField
+                sx={{ marginTop: "10px" }}
                 required
                 id="demo-helper-text-aligned-no-helper"
                 label="Enter your message"
+                multiline
+                rows={5}
+                maxRows={10}
               />
+              <Stack sx={{ marginTop: "9px" }} spacing={1} direction="column">
+                <Button type="submit" variant="contained">
+                  Submit
+                </Button>
+              </Stack>
               <label>
                 Name:
                 <input
@@ -266,8 +263,7 @@ function Contact() {
                 <button
                   className="btn-1"
                   onClick={(e) => {
-                    e.preventDefault();
-                    onSubmit();
+                    onSubmit(e);
                   }}
                 >
                   Submit

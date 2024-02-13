@@ -23,9 +23,9 @@ function Home() {
           <button className="btn"> Readmore</button>
 
           <div className="sections">
-            <div className="sec-1">jfksldfj</div>
-            <div className="sec-2">gsdggg</div>
-            <div className="sec-3">bbbefwef</div>
+            <div className="sec-1">Section 1</div>
+            <div className="sec-2">Section 2</div>
+            <div className="sec-3">Section 3</div>
           </div>
         </div>
       </div>
